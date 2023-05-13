@@ -1,0 +1,32 @@
+<%- include('header') %>
+
+    <body style="overflow-y: hidden; overflow-x: hidden; background-color: #fff;">
+        <div class="menu flex-column">
+            <div class="tools">
+                <div class="d-flex">
+                    <input type="color" class="form-control form-control-color ms-2" id="xcolor" style="width: 50px;" value="#000000">
+                    <button class="btn btn-primary ms-2" onclick="move()"><i class="fa-solid fa-arrow-pointer"></i></button>
+                    <button class="btn btn-primary ms-2" onclick="pen()"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn btn-primary ms-2" onclick="eraser()"><i class="fa-solid fa-eraser"></i></button>
+                    <button class="btn btn-primary ms-2" onclick="highlight_pen()"><i class="fa-solid fa-highlighter"></i></button>
+                    <button class="btn btn-primary ms-2" onclick="clearobj()"><i class="fa-solid fa-trash"></i></button>
+                    <button class="btn btn-primary ms-2" onclick="square()"><i class="fa-solid fa-square"></i></button>
+                    <button class="btn btn-primary ms-2" onclick="circle()"><i class="fa-solid fa-circle"></i></button>
+                    <button class="btn btn-primary ms-2" onclick="triangle()"><i class="fa-solid fa-triangle"></i></button>
+                </div>
+                <div class="d-flex mt-3 justify-content-center">
+                    <span style="width: 300px;">
+                        <input type="range" class="form-range" id="pensize" min="3" max="60" value="5">
+                    </span>
+                    <label for="pensize" class="form-label ms-2" id="lpensize">Size: 5</label>
+                </div>
+            </div>
+        </div>
+        <span class="join-user d-flex flex-column justify-content-center align-items-end" id="user_lst">
+        </span>
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+        <script src="/js/main.js"></script>
+        <script src="/js/socket.js"></script>
+    </body>
+
+    </html>

@@ -1,0 +1,54 @@
+<%- include('header') %>
+
+    <div class="banner shadow">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center g-5">
+            <div class="col-12 col-md-10 col-xl-6">
+                <div class="d-flex rounded-3 profile shadow">
+                    <img src="https://img.icons8.com/3d-fluency/150/null/user-male-circle.png" class="img-fluid" />
+                    <div class="d-flex flex-column align-items-center justify-content-center w-100">
+                        <span class="fs-2"><%= username %></span>
+                        <hr class="w-75">
+                        <div class="d-flex">
+                            <a href="/create" class="btn btn-primary me-3"><i class="fa-solid fa-circle-plus"></i>&nbsp;สร้างกระดานใหม่</a>
+                            <a href="/join" class="btn btn-warning me-3"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;เข้าร่วม</a>
+                            <a href="/logout" class="btn btn-danger"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;ออกจากระบบ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row justify-content-center g-3">
+                    <div class="col-12">
+                        <div class="text-center fs-2">
+                            <i class="fa-solid fa-chalkboard"></i>&nbsp;กระดานของฉัน
+                        </div>
+                    </div>
+                    <% for( let i = 0; i < room.length; i++ ) { %>
+                        <div class="col-12 col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between">
+                                        <span class="d-flex align-items-center fs-5"><%= room[i].roomname %></span>
+                                        <button class="d-flex align-items-center btn btn-sm btn-danger" onclick="del_board('<%= room[i].uuid %>')"><i class="fa-solid fa-trash"></i>&nbsp;<small>ลบ</small></button>
+                                    </div>
+                                </div>
+                                <img src="<%= room[i].image %>"
+                                    class="card-img-top px-1 pt-1 img-fluid w-100 border rounded-0" style="height: 250px;">
+                                <div class="card-body">
+                                    <a href="/board?room=<%= room[i].uuid %>" class="btn btn-primary w-100">เข้าร่วม</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/socket.js"></script>
+    </body>
+
+    </html>

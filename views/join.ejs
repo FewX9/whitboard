@@ -1,0 +1,24 @@
+<%- include('header') %>
+
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row w-100 justify-content-center">
+            <div class="col-12 col-md-5 col-xl-3">
+                <div class="w-100 p-5 pt-4 rounded-3 border text-center shadow bg-white join">
+                    <span class="back">
+                        <a href="/profile" class="btn btn-sm btn-outline-primary rounded-pill">บัญชีของฉัน</a>
+                    </span>
+                    <img src="https://img.icons8.com/clouds/150/null/add-user-group-man-man.png" class="img-fluid"/>
+                    <div class="fs-3 text-center mb-3">สร้างหรือเข้าร่วมห้อง</div>
+                    <input type="text" class="form-control" id="roomid" placeholder="ลิ้งหรือไอดีห้อง">
+                    <button class="btn btn-success mt-3 w-100" id="join">เข้าร่วมห้อง</button>
+                    <a href="/create" class="btn btn-outline-success mt-3 w-100">สร้างห้อง</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/socket.js"></script>
+    </body>
+
+    </html>

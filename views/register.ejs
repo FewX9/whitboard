@@ -1,0 +1,25 @@
+<%- include('header') %>
+
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row w-100 justify-content-center">
+            <div class="col-12 col-md-5 col-xl-3">
+                <div class="w-100 p-5 pt-4 rounded-3 border text-center shadow bg-white">
+                    <img src="https://img.icons8.com/clouds/150/null/add-user-male.png" class="img-fluid"/>
+                    <div class="fs-3 text-center mb-3">สมัครสมาชิก</div>
+                    <input type="text" class="form-control mb-3" id="username" placeholder="ชื่อผู้ใช้">
+                    <input type="password" class="form-control mb-3" id="password" placeholder="รหัสผ่าน">
+                    <input type="password" class="form-control" id="cpassword" placeholder="ยืนยันรหัสผ่าน">
+                    <button class="btn btn-success mt-3 w-100" id="register">สมัครสมาชิก</button>
+                    <div class="text-end mt-1">
+                        <a href="/login">เข้าสู่ระบบ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/socket.js"></script>
+    </body>
+
+    </html>

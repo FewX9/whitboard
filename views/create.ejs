@@ -1,0 +1,23 @@
+<%- include('header') %>
+
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row w-100 justify-content-center">
+            <div class="col-12 col-md-5 col-xl-3">
+                <div class="w-100 p-5 pt-4 rounded-3 border text-center shadow bg-white">
+                    <img src="https://img.icons8.com/clouds/150/null/create-new.png" class="img-fluid"/>
+                    <div class="fs-3 text-center mb-3">สร้างกระดาน</div>
+                    <input type="text" class="form-control" id="roomname" placeholder="ตั้งชื่อห้อง">
+                    <div class="w-100">
+                        <button class="btn btn-success mt-3 w-75 me-1" id="create">ตกลง</button>
+                        <a href="/join" class="btn btn-danger mt-3 w-auto" id="create">ยกเลิก</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/socket.js"></script>
+    </body>
+
+    </html>

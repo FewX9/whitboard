@@ -319,7 +319,7 @@ io.on('connection', (socket) => {
         socket.to(room).emit('update', data);
     });
 
-    socket.on('update_img', function (data, room, canvas_object) {0
+    socket.on('update_img', function (data, room, canvas_object) {
         update(ref(db, `room/` + room), {
             image: data,
             Object: canvas_object

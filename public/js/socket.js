@@ -10,7 +10,9 @@ async function update_img(socket) {
 
 socket.on('connect', function () {
     console.log('connected');
-    socket.emit('join', room);
+    const cookie = document.cookie.token;
+    console.log(cookie);
+    socket.emit('join', room, cookie);
 
     socket.on('update', function (data) {
         update_img(socket);

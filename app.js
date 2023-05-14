@@ -290,7 +290,7 @@ app.post('/create', function (req, res) {
 });
 
 io.on('connection', (socket) => {
-    socket.on('join', function (room) {
+    socket.on('join', function (room, cookie) {
         console.log('join', room);
         socket.join(room);
         get(ref(db, `room/` + room)).then((result) => {
@@ -302,8 +302,6 @@ io.on('connection', (socket) => {
             console.error(error);
         });
         
-        const cookie = socket.request.headers.cookie;
-        console.log(cookie);
         if (cookie) {
             const token = cookie.split('token=')[1];
             console.log(token);

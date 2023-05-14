@@ -292,7 +292,6 @@ app.post('/create', function (req, res) {
 io.on('connection', (socket) => {
     socket.on('join', function (room) {
         socket.join(room);
-        // get data from firebase
         get(ref(db, `room/` + room)).then((result) => {
             if (result.exists()) {
                 const data = result.val();
@@ -327,7 +326,6 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
-        // get cookie from socket
         const cookie = socket.request.headers.cookie;
         if (cookie) {
             const token = cookie.split('token=')[1];

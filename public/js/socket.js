@@ -17,7 +17,7 @@ socket.on('connect', function () {
     });
 
     socket.on('join', function (data, username) {
-        socket.emit('me', room);
+        console.log(data, username);
         if ($(`#${username}`).length == 0) {
             $("#user_lst").append(`<p id="${username}">${username}</p>`);
         }

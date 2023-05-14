@@ -9,6 +9,7 @@ async function update_img(socket) {
 }
 
 socket.on('connect', function () {
+    console.log('connected');
     socket.emit('join', room);
 
     socket.on('update', function (data) {

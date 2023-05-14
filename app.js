@@ -4,7 +4,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const bodyParser = require('body-parser');
-const io = new Server(server);
+const io = new Server(server,{cors: {origin: "*"}});
 const ejs = require('ejs');
 const { initializeApp } = require("firebase/app");
 const { getDatabase, set, ref, get, update, remove } = require("firebase/database");
@@ -301,7 +301,7 @@ io.on('connection', (socket) => {
         }).catch((error) => {
             console.error(error);
         });
-        // get cookie from socket
+        
         const cookie = socket.request.headers.cookie;
         if (cookie) {
             const token = cookie.split('token=')[1];
@@ -342,6 +342,6 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(3000, () => {
-    console.log('http://localhost:3000');
+server.listen(80, () => {
+    console.log('server is running');
 });

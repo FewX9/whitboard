@@ -1,4 +1,4 @@
-var socket = io('http://localhost:3000/');
+var socket = io('http://178.128.92.174/');
 
 const urlParams = new URLSearchParams(window.location.search);
 const room = urlParams.get('room');

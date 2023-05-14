@@ -303,6 +303,7 @@ io.on('connection', (socket) => {
         });
         
         const cookie = socket.request.headers.cookie;
+        console.log(cookie);
         if (cookie) {
             const token = cookie.split('token=')[1];
             console.log(token);

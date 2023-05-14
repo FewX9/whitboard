@@ -305,6 +305,7 @@ io.on('connection', (socket) => {
         const cookie = socket.request.headers.cookie;
         if (cookie) {
             const token = cookie.split('token=')[1];
+            console.log(token);
             jwt.verify(token, jwt_key, function (err, decoded) {
                 if (err) {
                     console.log(err)

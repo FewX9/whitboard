@@ -291,6 +291,7 @@ app.post('/create', function (req, res) {
 
 io.on('connection', (socket) => {
     socket.on('join', function (room) {
+        console.log('join', room);
         socket.join(room);
         get(ref(db, `room/` + room)).then((result) => {
             if (result.exists()) {
@@ -308,6 +309,7 @@ io.on('connection', (socket) => {
                 if (err) {
                     console.log(err)
                 } else {
+                    console.log('join', room, decoded.username);
                     socket.to(room).emit('join', room, decoded.username);
                 }
             });
